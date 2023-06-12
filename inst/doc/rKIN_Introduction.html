@@ -251,15 +251,14 @@ package. rKIN applies methods used to estimate animal homerange, but
 instead of geospatial coordinates, we use isotopic coordinates. The idea
 is straight forward, use spatial analyses tools in an unprojected space,
 in this case Isotope Niche space. The creation of this package relies on
-functions found in <a href="https://CRAN.R-project.org/package=ggplot2">ggplot2</a>, <a href="https://cran.r-project.org/package=MASS">MASS</a>, <a href="https://cran.r-project.org/package=raster">raster</a>, <a href="https://cran.r-project.org/package=rgeos">rgeos</a> and <a href="https://cran.r-project.org/package=sp">sp</a> packages (you may
-also need the ‘maptools’ package). The estimation methods include: 1)
-2-dimensional bivariate normal kernel utilization density estimator
-(estKIN), 2) bivariate normal ellipse estimator (estEllipse), and 3)
-minimum convex polygon estimator (estMCP), all applied to stable isotope
-data (simply x and y coordinates of the same scale). Additionally,
-functions to determine niche area (getArea), polygon overlap between
-groups and levels (confidence contours; calcOverlap) and plotting
-capabilities (plot.kin).</p>
+functions found in <a href="https://CRAN.R-project.org/package=ggplot2">ggplot2</a>, <a href="https://cran.r-project.org/package=MASS">MASS</a>, and <a href="https://cran.r-project.org/package=sf">sf</a> packages. The
+estimation methods include: 1) 2-dimensional bivariate normal kernel
+utilization density estimator (estKIN), 2) bivariate normal ellipse
+estimator (estEllipse), and 3) minimum convex polygon estimator
+(estMCP), all applied to stable isotope data (simply x and y coordinates
+of the same scale). Additionally, functions to determine niche area
+(getArea), polygon overlap between groups and levels (confidence
+contours; calcOverlap) and plotting capabilities (plot.kin).</p>
 </div>
 <div id="example-kernel-ud" class="section level2">
 <h2>Example: Kernel UD</h2>
@@ -270,10 +269,10 @@ values are then used to create a lattice/matrix of points for which the
 kernel will be estimated to. 2) Using MASS::kde2d and the default
 bandwidth, fit the kernel to each ‘group’ individually. 3) For each
 ‘group’, obtain the threshold values for each ‘level’ and extract the
-contourlines. 4) Convert the Lines to a SpatialPolygonsDataFrame (sp
-package) and attribute with ShapeArea 5) Function returns an object of
-class(“estObj”), which is a list of SpatialPolygonsDataFrames, 1 list
-item for each group.</p>
+contourlines. 4) Convert the Lines to a sf Data Frame (sf package) and
+attribute with ShapeArea 5) Function returns an object of
+class(“estObj”), which is a list of sf Data Frames, 1 list item for each
+group.</p>
 <p>Below is an example:</p>
 <pre><code>library(rKIN)
 # read in example data. Data contain 2 species, a habitat class and C/N values
@@ -289,7 +288,7 @@ kin.area
 kin.olp&lt;- calcOverlap(test.kin)
 kin.olp
 # plot the kernel estimates
-plotKIN(test.kin, title=&quot;Test Kernel UD&quot;, x=&quot;Ave_C&quot;, y=&quot;Ave_N&quot;)</code></pre>
+plotKIN(test.kin, title=&quot;Test Kernel UD&quot;, xlab=&quot;Ave_C&quot;, ylab=&quot;Ave_N&quot;)</code></pre>
 </div>
 <div id="example-bivariate-ellipse" class="section level2">
 <h2>Example: Bivariate Ellipse</h2>
@@ -300,9 +299,9 @@ coordinates pairs. 2) For each ‘level’, estimate the radius of a circle
 given the variance and a chi-square cutoff threshold. 3) Using the
 genCircle function from <a href="https://cran.r-project.org/package=SIBER">SIBER</a> package,
 create the xy coordinate pairs to create the ellipse. 4) Convert the
-points to a SpatialPolygonsDataFrame (sp package) and attribute with
-ShapeArea 5) Function returns an object of class(“estObj”), which is a
-list of SpatialPolygonsDataFrames, 1 list item for each ‘group’.</p>
+points to a sf Data Frame (sf package) and attribute with ShapeArea 5)
+Function returns an object of class(“estObj”), which is a list of sf
+Data Frame, 1 list item for each ‘group’.</p>
 <p>Below is an example:</p>
 <pre><code>library(rKIN)
 # read in example data. Data contain 2 species, a habitat class and C/N values
@@ -317,7 +316,7 @@ elp.area
 elp.olp&lt;- calcOverlap(test.elp)
 elp.olp
 # plot the kernel estimates
-plotKIN(test.elp, title=&quot;Test Bivariate Ellipse&quot;, x=&quot;Ave_C&quot;, y=&quot;Ave_N&quot;)</code></pre>
+plotKIN(test.elp, title=&quot;Test Bivariate Ellipse&quot;, xlab=&quot;Ave_C&quot;, ylab=&quot;Ave_N&quot;)</code></pre>
 </div>
 <div id="example-minimum-convex-polygon-mcp" class="section level2">
 <h2>Example: Minimum Convex Polygon (MCP)</h2>
@@ -326,10 +325,9 @@ Convex Polygon estimates: 1) For each ‘group’, estimate the centroid of
 the set of points and obtain the covariance of the xy coordinates pairs.
 2) Calculate the distance of each point to the centroid. 3) Obtain the
 distance threshold for each ‘level’ given the quantile values. 4)
-Convert the Points to a SpatialPolygonsDataFrame (sp package) and
-attribute with ShapeArea. 5) Function returns an object of
-class(“estObj”), which is a list of SpatialPolygonsDataFrames, 1 list
-item for each ‘group’.</p>
+Convert the Points to a sf Data Frame (sf package) and attribute with
+ShapeArea. 5) Function returns an object of class(“estObj”), which is a
+list of sf Data Frames, 1 list item for each ‘group’.</p>
 <p>Below is an example:</p>
 <pre><code>library(rKIN)
 # read in example data. Data contain 2 species, a habitat class and C/N values
@@ -344,7 +342,7 @@ mcp.area
 mcp.olp&lt;- calcOverlap(test.mcp)
 mcp.olp
 # plot the mcp estimates
-plotKIN(test.mcp, title=&quot;Test Minimum Convex Polygons&quot;, x=&quot;Ave_C&quot;, y=&quot;Ave_N&quot;)</code></pre>
+plotKIN(test.mcp, title=&quot;Test Minimum Convex Polygons&quot;, xlab=&quot;Ave_C&quot;, ylab=&quot;Ave_N&quot;)</code></pre>
 </div>
 <div id="compare-the-areas-between-methods" class="section level2">
 <h2>Compare the areas between methods</h2>
