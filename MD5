@@ -1,4 +1,4 @@
-a48c801d82107bae40a3d494ec4a6479 *DESCRIPTION
+2526287e206c86e24f6683fe0ad9cbdc *DESCRIPTION
 16a43f22380bbd88fad7f3bc8992d204 *NAMESPACE
 3e938e00241c6210dc71ec29f0bba8fd *R/bw_hbcv.R
 9a3b9fbfaf254c406d33ad89f3e95e64 *R/bw_hlscv.R
@@ -19,10 +19,10 @@ b45c215fff8155139d17d70ceec0e71a *R/getArea.R
 681ab8a7bf60490f48eaf2e8520de623 *R/getColors.R
 b260e69475d3a3eb500153ec5fc3826e *R/getKernelThreshold.R
 3732a2261c85020a5c7f507051f04695 *R/package-rKIN.R
-76a74052d73a3d7711947cdc68b9783b *R/plotKIN.R
+f82ea19beb6a3209bfd137d745663ba1 *R/plotKIN.R
 e593d2142de757b45b53f73b155b963a *R/zzz.R
 3bc103707fcb6a3d9d733588f4ed15ab *README.md
-7e7f395353f142da22b28eeec9b6e9ef *build/vignette.rds
+c155da7633676e6db8e8c99752ad3d11 *build/vignette.rds
 4417fa3666e772f3812bbccb73d1331d *data/rodents.rda
 fa02f3e79911fffcd7c28406ec38fd03 *inst/doc/rKIN_Introduction.R
 d1749b3309a04611c43cfa3e8e4cc55f *inst/doc/rKIN_Introduction.Rmd
