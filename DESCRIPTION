@@ -1,8 +1,8 @@
 Package: rKIN
 Type: Package
 Title: (Kernel) Isotope Niche Estimation
-Version: 1.0.3
-Date: 2025-02-14
+Version: 1.0.4
+Date: 2025-03-03
 URL: https://github.com/salbeke/rKIN
 BugReports: https://github.com/salbeke/rKIN/issues
 Depends: R (>= 4.1.0), ks, sf
@@ -23,7 +23,7 @@ RoxygenNote: 7.2.3
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2025-02-14 19:14:00 UTC; wkirkpa2
+Packaged: 2025-03-03 20:05:54 UTC; wkirkpa2
 Author: Shannon E Albeke [aut, cre]
 Repository: CRAN
-Date/Publication: 2025-02-14 20:10:01 UTC
+Date/Publication: 2025-03-03 20:30:02 UTC

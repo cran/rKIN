@@ -1,4 +1,4 @@
-2526287e206c86e24f6683fe0ad9cbdc *DESCRIPTION
+3ab732961ac1fe862756ab4ea2e2cfba *DESCRIPTION
 16a43f22380bbd88fad7f3bc8992d204 *NAMESPACE
 3e938e00241c6210dc71ec29f0bba8fd *R/bw_hbcv.R
 9a3b9fbfaf254c406d33ad89f3e95e64 *R/bw_hlscv.R
@@ -16,7 +16,7 @@ dbf94ed0ce71f1bef52ee89e66323f7e *R/bw_hscv.R
 474324c499be9985a40d32f4df6cfb9b *R/estMCP.R
 e01ad380e837665f2f3cc3c56860e85c *R/genCircle.R
 b45c215fff8155139d17d70ceec0e71a *R/getArea.R
-681ab8a7bf60490f48eaf2e8520de623 *R/getColors.R
+4a8af1288922e8d08bba2dff516708aa *R/getColors.R
 b260e69475d3a3eb500153ec5fc3826e *R/getKernelThreshold.R
 3732a2261c85020a5c7f507051f04695 *R/package-rKIN.R
 f82ea19beb6a3209bfd137d745663ba1 *R/plotKIN.R
